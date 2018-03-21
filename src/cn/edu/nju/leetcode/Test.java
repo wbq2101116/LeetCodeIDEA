@@ -9,18 +9,44 @@ public class Test {
         int target = 9;
         System.out.println(Arrays.toString(new Solution().twoSum(nums, target)));
 */
-
+/*
         char[] tasks = {'A', 'A', 'A', 'A', 'A', 'A', 'B', 'C', 'D', 'E', 'F', 'G'};
         int n = 2;
 
         System.out.println(new Solution().leastInterval(tasks, n));
+*/
+/*
+        int[] nums = {1, 6, 1};
+        int k = 3;
+        System.out.println(new Solution().smallestDistancePair(nums, k));
+*/
 
     }
 
 
 }
 
+/*
 class Solution {
+    public int smallestDistancePair(int[] nums, int k) {
+        Arrays.sort(nums);
+        int n = nums.length;
+        int[] res = new int[nums[n - 1] - nums[0] + 1];
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                res[nums[j] - nums[i]]++;
+        }
+        // Arrays.sort(res);
+        int count = 0;
+        for (int i = 0; i < res.length; i++) {
+            count += res[i];
+            if (count >= k)
+                return i;
+        }
+        return 0;
+    }
+
+
     public int leastInterval(char[] tasks, int n) {
         // hashmap
         Map<Character, Integer> charMap = new HashMap<>();
@@ -77,12 +103,12 @@ class Solution {
 
                 // System.out.println(Arrays.toString(priorityQueue.toArray()));
                 // printHashMap(charVisited);
-                /*if (null == ch) {
-                    priorityQueue.add(select);
-                    res++;
-                    continue;
-                }
-*/
+                //if (null == ch) {
+                //    priorityQueue.add(select);
+                //    res++;
+                //    continue;
+                //}
+
                 if (select - 1 != 0) {
                     list.add(select - 1);
                     // priorityQueue.add(select - 1);
@@ -116,7 +142,7 @@ class Solution {
         }
         return null;
     }
-/*
+
     public void printHashMap(Map<Character, Integer> map) {
         Iterator iter = map.entrySet().iterator();
         while (iter.hasNext()) {
@@ -124,8 +150,9 @@ class Solution {
             // System.out.println("key : " + entry.getKey() + " value : " + entry.getValue());
         }
     }
-    */
+
 }
+*/
 
 /*
 // 167 Two Sum II - Input array is sorted
